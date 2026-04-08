@@ -1,0 +1,252 @@
+.add-person-popup .popup {
+  width: 420px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.person-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Input fields */
+.person-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.person-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.person-input:focus {
+  border-color: var(--accent);
+}
+
+/* Password field with eye toggle */
+.person-password-field {
+  position: relative;
+}
+
+.person-password-field .person-input {
+  padding-right: 44px;
+}
+
+.person-eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.person-eye-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Upload area */
+.person-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-radius: 12px;
+  border: 2px dashed var(--border);
+  background: var(--bg-primary);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.person-upload:hover {
+  border-color: var(--accent);
+}
+
+.person-upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 188, 212, 0.1);
+  color: #00bcd4;
+}
+
+.person-upload-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00bcd4;
+}
+
+.person-upload-hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.person-upload-link {
+  color: #00bcd4;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.person-upload-formats {
+  font-size: 11px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Toggle rows */
+.person-toggle-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.person-toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.person-toggle-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.person-toggle-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Select dropdown */
+.person-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.person-section-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.person-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.person-select:hover {
+  border-color: var(--accent);
+}
+
+.person-select-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Info banner */
+.person-info-banner {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(0, 188, 212, 0.08);
+  border: 1px solid rgba(0, 188, 212, 0.2);
+}
+
+.person-info-banner .person-info-icon {
+  flex-shrink: 0;
+  color: #00bcd4;
+  margin-top: 1px;
+}
+
+.person-info-banner p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Footer */
+.person-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.person-cancel-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #00bcd4;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.person-cancel-btn:hover {
+  background: rgba(0, 188, 212, 0.08);
+}
+
+.person-submit-btn {
+  padding: 8px 22px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.person-submit-btn:disabled {
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.person-submit-btn:not(:disabled):hover {
+  opacity: 0.9;
+}

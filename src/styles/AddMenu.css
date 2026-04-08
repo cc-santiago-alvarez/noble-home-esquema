@@ -1,0 +1,80 @@
+.add-menu {
+  position: relative;
+}
+
+.add-menu-trigger {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.add-menu-trigger:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.add-menu-trigger.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.add-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+  z-index: 100;
+  animation: addMenuSlideDown 0.15s ease;
+}
+
+@keyframes addMenuSlideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.add-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.add-menu-item:hover {
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+
+.add-menu-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.add-menu-item:hover .add-menu-item-icon {
+  color: var(--accent);
+}

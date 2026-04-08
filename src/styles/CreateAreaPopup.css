@@ -1,0 +1,266 @@
+.create-area-popup .popup {
+  width: 420px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.area-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Input & select fields */
+.area-field {
+  width: 100%;
+}
+
+.area-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.area-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.area-input:focus {
+  border-color: var(--accent);
+}
+
+.area-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.area-select:hover {
+  border-color: var(--accent);
+}
+
+.area-select-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Etiquetas */
+.area-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.area-section-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.area-tag-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  font-size: 13px;
+  font-weight: 500;
+  color: #00bcd4;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.area-tag-btn:hover {
+  border-color: #00bcd4;
+  background: rgba(0, 188, 212, 0.06);
+}
+
+/* Upload area */
+.area-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-radius: 12px;
+  border: 2px dashed var(--border);
+  background: var(--bg-primary);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.area-upload:hover {
+  border-color: var(--accent);
+}
+
+.area-upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 188, 212, 0.1);
+  color: #00bcd4;
+}
+
+.area-upload-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00bcd4;
+}
+
+.area-upload-hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.area-upload-link {
+  color: #00bcd4;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.area-upload-formats {
+  font-size: 11px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Alias section */
+.area-alias-section {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.area-alias-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.area-alias-header:hover {
+  background: var(--bg-hover);
+}
+
+.area-alias-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.area-alias-chevron {
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+}
+
+.area-alias-chevron.open {
+  transform: rotate(180deg);
+}
+
+.area-alias-body {
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.area-alias-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.area-add-alias-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #00bcd4;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.area-add-alias-btn:hover {
+  opacity: 0.8;
+}
+
+/* Footer */
+.area-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.area-cancel-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #00bcd4;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.area-cancel-btn:hover {
+  background: rgba(0, 188, 212, 0.08);
+}
+
+.area-create-btn {
+  padding: 8px 22px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.area-create-btn:disabled {
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.area-create-btn:not(:disabled):hover {
+  opacity: 0.9;
+}

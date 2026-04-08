@@ -1,0 +1,231 @@
+/* Brand selection step */
+.add-device-popup .popup {
+  width: 380px;
+}
+
+.brand-search-wrapper {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.brand-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.brand-search-input {
+  width: 100%;
+  padding: 9px 12px 9px 32px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.brand-search-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.brand-search-input:focus {
+  border-color: var(--accent);
+}
+
+.brand-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 20px 0;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.brand-card:hover {
+  border-color: var(--accent);
+  background: rgba(108, 92, 231, 0.06);
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.brand-name {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* QR scan step */
+.qr-step-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.qr-step-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qr-step-brand-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.qr-step-brand-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qr-scan-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 200px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 2px dashed var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.qr-scan-area .qr-corners {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+}
+
+.qr-corners::before,
+.qr-corners::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+.qr-corners::before {
+  top: 0;
+  left: 0;
+  border-width: 3px 0 0 3px;
+  border-radius: 4px 0 0 0;
+}
+
+.qr-corners::after {
+  top: 0;
+  right: 0;
+  border-width: 3px 3px 0 0;
+  border-radius: 0 4px 0 0;
+}
+
+.qr-corners-bottom::before,
+.qr-corners-bottom::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+.qr-corners-bottom::before {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 3px 3px;
+  border-radius: 0 0 0 4px;
+}
+
+.qr-corners-bottom::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 3px 3px 0;
+  border-radius: 0 0 4px 0;
+}
+
+.qr-scan-icon {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.qr-scan-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.qr-scan-hint {
+  font-size: 11px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.qr-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 4px;
+}
+
+.qr-back-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
