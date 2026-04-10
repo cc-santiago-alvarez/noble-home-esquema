@@ -28,14 +28,14 @@ function EnergyFlowPage() {
           <text x="110" y="38" textAnchor="middle" fontSize="12" fill="#eab308">
             <tspan x="110" dy="0">&#9788;</tspan>
           </text>
-          <text x="110" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.solar.value} {e.solar.unit}</text>
-          <text x="110" y="80" textAnchor="middle" fontSize="9" fill="#6b7280">Solar</text>
+          <text x="110" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.solar.value} {e.solar.unit}</text>
+          <text x="110" y="80" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Solar</text>
 
           {/* Gas node */}
           <circle cx="300" cy="42" r="26" fill="none" stroke="#9ca3af" strokeWidth="2"/>
-          <text x="300" y="38" textAnchor="middle" fontSize="14" fill="#6b7280">&#x1F525;</text>
-          <text x="300" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.gas.value} {e.gas.unit}</text>
-          <text x="300" y="80" textAnchor="middle" fontSize="9" fill="#6b7280">Gas</text>
+          <text x="300" y="38" textAnchor="middle" fontSize="14" fill="var(--text-secondary)">&#x1F525;</text>
+          <text x="300" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.gas.value} {e.gas.unit}</text>
+          <text x="300" y="80" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Gas</text>
 
           {/* Grid (Red) node */}
           <g>
@@ -43,36 +43,36 @@ function EnergyFlowPage() {
             <text x="55" y="136" textAnchor="middle" fontSize="12" fill="#8b5cf6">
               <tspan x="55" dy="0">&#8644;</tspan>
             </text>
-            <text x="55" y="150" textAnchor="middle" fontSize="7" fill="#6b7280">
+            <text x="55" y="150" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">
               <tspan x="55" dy="0">← {e.gridIn.value} kWh</tspan>
             </text>
-            <text x="55" y="159" textAnchor="middle" fontSize="7" fill="#6b7280">
+            <text x="55" y="159" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">
               <tspan x="55" dy="0">→ {e.gridOut.value} kWh</tspan>
             </text>
-            <text x="55" y="178" textAnchor="middle" fontSize="9" fill="#6b7280">Red</text>
+            <text x="55" y="178" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Red</text>
           </g>
 
           {/* House node */}
           <circle cx="285" cy="110" r="30" fill="none" stroke="#f97316" strokeWidth="2"/>
           <text x="285" y="106" textAnchor="middle" fontSize="14" fill="#f97316">&#x1F3E0;</text>
-          <text x="285" y="122" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.house.value} {e.house.unit}</text>
+          <text x="285" y="122" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.house.value} {e.house.unit}</text>
 
           {/* Battery node */}
           <circle cx="155" cy="220" r="26" fill="none" stroke="#22c55e" strokeWidth="2"/>
           <text x="155" y="216" textAnchor="middle" fontSize="12" fill="#22c55e">&#x1F50B;</text>
-          <text x="155" y="230" textAnchor="middle" fontSize="7" fill="#6b7280">
+          <text x="155" y="230" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">
             <tspan x="155" dy="0">← {e.batteryIn.value} kWh</tspan>
           </text>
-          <text x="155" y="239" textAnchor="middle" fontSize="7" fill="#6b7280">
+          <text x="155" y="239" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">
             <tspan x="155" dy="0">→ {e.batteryOut.value} kWh</tspan>
           </text>
-          <text x="155" y="256" textAnchor="middle" fontSize="9" fill="#6b7280">Batería</text>
+          <text x="155" y="256" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Batería</text>
 
           {/* Water node */}
           <circle cx="305" cy="230" r="26" fill="none" stroke="#06b6d4" strokeWidth="2"/>
           <text x="305" y="226" textAnchor="middle" fontSize="14" fill="#06b6d4">&#x1F4A7;</text>
-          <text x="305" y="242" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.water.value} {e.water.unit}</text>
-          <text x="305" y="256" textAnchor="middle" fontSize="9" fill="#6b7280">Agua</text>
+          <text x="305" y="242" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.water.value} {e.water.unit}</text>
+          <text x="305" y="256" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Agua</text>
         </svg>
       </div>
     </div>
@@ -119,34 +119,34 @@ function EnergyChartPage() {
             const y = padTop + (1 - (val - minVal) / (maxVal - minVal)) * chartH
             return (
               <g key={i}>
-                <line x1={padLeft} y1={y} x2={width - padRight} y2={y} stroke="#e5e7eb" strokeWidth="0.5" />
-                <text x={padLeft - 8} y={y + 3} textAnchor="end" fontSize="8" fill="#6b7280">{Math.round(val)}</text>
+                <line x1={padLeft} y1={y} x2={width - padRight} y2={y} stroke="var(--chart-grid)" strokeWidth="0.5" />
+                <text x={padLeft - 8} y={y + 3} textAnchor="end" fontSize="8" fill="var(--text-secondary)">{Math.round(val)}</text>
               </g>
             )
           })}
 
           {/* Y axis label */}
-          <text x="12" y={padTop + chartH / 2} textAnchor="middle" fontSize="7" fill="#6b7280" transform={`rotate(-90, 12, ${padTop + chartH / 2})`}>
+          <text x="12" y={padTop + chartH / 2} textAnchor="middle" fontSize="7" fill="var(--text-secondary)" transform={`rotate(-90, 12, ${padTop + chartH / 2})`}>
             Consumo (kWh)
           </text>
 
           {/* Line */}
-          <polyline points={polyline} fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinejoin="round" />
+          <polyline points={polyline} fill="none" stroke="#da9b3a" strokeWidth="2" strokeLinejoin="round" />
 
           {/* Data points */}
           {points.map((p, i) => (
-            <circle key={i} cx={p.x} cy={p.y} r="3" fill="#f59e0b" stroke="#fff" strokeWidth="1.5" />
+            <circle key={i} cx={p.x} cy={p.y} r="3" fill="#da9b3a" stroke="var(--chart-point-ring)" strokeWidth="1.5" />
           ))}
 
           {/* X axis labels */}
           {points.map((p, i) => (
-            <text key={i} x={p.x} y={height - padBottom + 16} textAnchor="middle" fontSize="8" fill="#6b7280">
+            <text key={i} x={p.x} y={height - padBottom + 16} textAnchor="middle" fontSize="8" fill="var(--text-secondary)">
               {p.month}
             </text>
           ))}
 
           {/* X axis label */}
-          <text x={padLeft + chartW / 2} y={height - 4} textAnchor="middle" fontSize="8" fill="#6b7280">Mes</text>
+          <text x={padLeft + chartW / 2} y={height - 4} textAnchor="middle" fontSize="8" fill="var(--text-secondary)">Mes</text>
         </svg>
       </div>
     </div>

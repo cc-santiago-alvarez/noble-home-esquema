@@ -7,21 +7,63 @@
 :root {
   --sidebar-width: 200px;
   --sidebar-collapsed-width: 64px;
-  --bg-primary: #f5f6fa;
-  --bg-secondary: #ffffff;
-  --bg-card: #ffffff;
-  --bg-hover: #f0f1f5;
-  --text-primary: #1a1a2e;
-  --text-secondary: #6b7280;
-  --accent: #6c5ce7;
-  --accent-light: #8b7cf7;
-  --accent-glow: rgba(108, 92, 231, 0.15);
+
+  --bg-primary: #04040c;
+  --bg-secondary: #040c11;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-hover: rgba(255, 255, 255, 0.08);
+  --text-primary: #fcfcf4;
+  --text-secondary: #b4afaf;
+  --accent: #da9b3a;
+  --accent-light: #e4b05c;
+  --accent-glow: rgba(218, 155, 58, 0.25);
   --success: #22c55e;
-  --warning: #f59e0b;
+  --warning: #da9b3a;
   --danger: #ef4444;
-  --border: #e5e7eb;
-  --popup-bg: #ffffff;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --border: rgba(255, 255, 255, 0.08);
+  --popup-bg: rgba(0, 0, 0, 0.92);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 16px;
+  --glass-glow: 0 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --toggle-off: rgba(255, 255, 255, 0.15);
+
+  --chart-grid: rgba(255, 255, 255, 0.1);
+  --chart-grid-strong: rgba(255, 255, 255, 0.2);
+  --chart-point-ring: rgba(10, 14, 26, 0.8);
+  --icon-placeholder: rgba(255, 255, 255, 0.15);
+  --action-color: #00bcd4;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f3ef;
+  --bg-secondary: #ebe8e2;
+  --bg-card: rgba(0, 0, 0, 0.04);
+  --bg-hover: rgba(0, 0, 0, 0.06);
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b6360;
+  --accent: #c08520;
+  --accent-light: #da9b3a;
+  --accent-glow: rgba(192, 133, 32, 0.18);
+  --success: #16a34a;
+  --warning: #c08520;
+  --danger: #dc2626;
+  --border: rgba(0, 0, 0, 0.10);
+  --popup-bg: rgba(255, 255, 255, 0.95);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-blur: 16px;
+  --glass-glow: 0 0 1px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+  --toggle-off: rgba(0, 0, 0, 0.15);
+
+  --chart-grid: rgba(0, 0, 0, 0.08);
+  --chart-grid-strong: rgba(0, 0, 0, 0.15);
+  --chart-point-ring: rgba(245, 243, 239, 0.9);
+  --icon-placeholder: rgba(0, 0, 0, 0.10);
+  --action-color: #00838f;
 }
 
 html, body, #root {
@@ -34,6 +76,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -51,6 +94,11 @@ button {
 }
 
 /* Scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -58,6 +106,19 @@ button {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+[data-theme="light"] * {
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
 }

@@ -25,10 +25,12 @@
 
 .popup {
   background: var(--popup-bg);
-  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   width: 320px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), var(--glass-glow);
   animation: slideUp 0.2s ease;
 }
 
@@ -301,9 +303,9 @@
   left: 0;
   right: 0;
   background: linear-gradient(90deg,
-    var(--accent) 0%, rgba(108, 92, 231, 0.7) 15%,
-    var(--accent) 30%, rgba(108, 92, 231, 0.7) 50%,
-    var(--accent) 65%, rgba(108, 92, 231, 0.7) 80%,
+    var(--accent) 0%, rgba(218, 155, 58, 0.7) 15%,
+    var(--accent) 30%, rgba(218, 155, 58, 0.7) 50%,
+    var(--accent) 65%, rgba(218, 155, 58, 0.7) 80%,
     var(--accent) 100%
   );
   transition: height 0.3s ease;
@@ -334,7 +336,7 @@
 }
 
 .preset-btn.active {
-  background: rgba(108, 92, 231, 0.15);
+  background: rgba(218, 155, 58, 0.15);
   border-color: var(--accent);
   color: var(--accent-light);
 }
@@ -352,4 +354,17 @@
   border: 1px dashed var(--border);
   color: var(--text-secondary);
   font-size: 12px;
+}
+
+/* Light mode */
+[data-theme="light"] .popup-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .popup {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), var(--glass-glow);
+}
+
+[data-theme="light"] .curtain-window {
+  background: linear-gradient(180deg, #c5d3e8 0%, #8fabc8 100%);
 }

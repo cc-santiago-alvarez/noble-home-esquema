@@ -29,9 +29,12 @@
   align-items: center;
   gap: 2px;
   padding: 4px 12px;
-  background: var(--bg-card);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
 }
 
 .stat-value {
@@ -53,9 +56,12 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--bg-secondary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   border-radius: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
   padding: 12px;
 }
 
@@ -107,7 +113,7 @@
   justify-content: center;
   background: transparent;
   border: none;
-  color: #333;
+  color: var(--text-secondary);
   z-index: 10;
   transition: all 0.2s ease;
   padding: 0;
@@ -115,31 +121,48 @@
 
 .device-btn:hover {
   transform: translate(-50%, -50%) scale(1.2);
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .device-btn.device-light.on {
-  color: #222;
-  background: rgba(0, 0, 0, 0.06);
+  color: var(--warning);
+  background: rgba(218, 155, 58, 0.15);
 }
 
 .device-btn.device-thermo:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .device-btn.device-curtain:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .device-btn.device-camera {
-  color: #444;
+  color: var(--text-secondary);
 }
 
 .device-btn.device-camera.active {
-  color: #333;
+  color: var(--success);
 }
 
 .device-btn.device-camera:not(.active) {
-  color: #aaa;
+  color: var(--text-secondary);
   opacity: 0.6;
+}
+
+/* Light mode */
+[data-theme="light"] .room-name {
+  background: rgba(60, 60, 60, 0.65);
+}
+
+[data-theme="light"] .device-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .device-btn.device-thermo:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .device-btn.device-curtain:hover {
+  background: rgba(0, 0, 0, 0.08);
 }
