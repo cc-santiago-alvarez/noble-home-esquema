@@ -102,6 +102,29 @@ const initialDevices = {
       { hour: 23, grid: 0.5, solar: 0, export: 0 },
     ],
   },
+  vacuum: {
+    name: 'Aspiradora',
+    running: false,
+    mode: 'auto',
+    battery: 78,
+    area: 'Sala',
+  },
+  locks: {
+    'puerta-principal': { name: 'Puerta Principal', locked: true },
+    'puerta-garaje':    { name: 'Puerta Garaje', locked: true },
+    'puerta-cocina':    { name: 'Puerta Cocina', locked: false },
+    'alcoba-1':         { name: 'Alcoba 1', locked: true },
+    'alcoba-2':         { name: 'Alcoba 2', locked: true },
+    'alcoba-3':         { name: 'Alcoba 3', locked: false },
+  },
+  iotDevices: {
+    'smart-plug-1':   { name: 'Enchufe Cocina', type: 'plug', on: true },
+    'smart-plug-2':   { name: 'Enchufe Sala', type: 'plug', on: false },
+    'air-purifier':   { name: 'Purificador', type: 'purifier', on: true },
+    'humidifier':     { name: 'Humidificador', type: 'humidifier', on: false },
+    'smart-speaker':  { name: 'Altavoz Hall', type: 'speaker', on: true },
+    'door-lock':      { name: 'Cerradura Puerta', type: 'lock', locked: true },
+  },
   energyHistory: [
     { month: 'mar-25', value: 138 },
     { month: 'abr-25', value: 155 },
@@ -180,6 +203,44 @@ export function DeviceProvider({ children }) {
     }))
   }
 
+  const toggleVacuum = () => {
+    setDevices(prev => ({
+      ...prev,
+      vacuum: { ...prev.vacuum, running: !prev.vacuum.running }
+    }))
+  }
+
+  const setVacuumMode = (mode) => {
+    setDevices(prev => ({
+      ...prev,
+      vacuum: { ...prev.vacuum, mode }
+    }))
+  }
+
+  const toggleLock = (lockId) => {
+    setDevices(prev => ({
+      ...prev,
+      locks: {
+        ...prev.locks,
+        [lockId]: { ...prev.locks[lockId], locked: !prev.locks[lockId].locked }
+      }
+    }))
+  }
+
+  const toggleIoTDevice = (deviceId) => {
+    setDevices(prev => {
+      const device = prev.iotDevices[deviceId]
+      const key = device.type === 'lock' ? 'locked' : 'on'
+      return {
+        ...prev,
+        iotDevices: {
+          ...prev.iotDevices,
+          [deviceId]: { ...device, [key]: !device[key] }
+        }
+      }
+    })
+  }
+
   const turnOffTv = () => {
     setDevices(prev => ({
       ...prev,
@@ -198,6 +259,10 @@ export function DeviceProvider({ children }) {
       setTvProperty,
       turnOffTv,
       togglePlayback,
+      toggleVacuum,
+      setVacuumMode,
+      toggleIoTDevice,
+      toggleLock,
     }}>
       {children}
     </DeviceContext.Provider>

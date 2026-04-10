@@ -32,10 +32,12 @@
   top: calc(100% + 8px);
   right: 0;
   width: 220px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
+  background: var(--popup-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), var(--glass-glow);
   padding: 6px;
   z-index: 100;
   animation: addMenuSlideDown 0.15s ease;
@@ -77,4 +79,13 @@
 
 .add-menu-item:hover .add-menu-item-icon {
   color: var(--accent);
+}
+
+/* Light mode */
+[data-theme="light"] .add-menu-dropdown {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), var(--glass-glow);
+}
+
+[data-theme="light"] .add-menu-trigger.active {
+  color: #fff;
 }

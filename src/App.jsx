@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ThemeProvider } from './context/ThemeContext'
 import { DeviceProvider } from './context/DeviceContext'
 import Sidebar from './components/Sidebar'
 import DashboardGrid from './components/DashboardGrid'
@@ -37,30 +38,32 @@ export default function App() {
   const [activeView, setActiveView] = useState('home')
 
   return (
-    <DeviceProvider>
-      <div className="app">
-        <Sidebar activeView={activeView} onViewChange={setActiveView} views={VIEWS} />
-        <main className="main-content">
-          <header className="main-header">
-            <div className="main-header-info">
-              <h1 className="main-header-title">Casa A</h1>
-              <div className="main-header-status">
-                <span className="status-dot-green" />
-                <span className="status-text-connected">Conectado</span>
+    <ThemeProvider>
+      <DeviceProvider>
+        <div className="app">
+          <Sidebar activeView={activeView} onViewChange={setActiveView} views={VIEWS} />
+          <main className="main-content">
+            <header className="main-header">
+              <div className="main-header-info">
+                <h1 className="main-header-title">Casa A</h1>
+                <div className="main-header-status">
+                  <span className="status-dot-green" />
+                  <span className="status-text-connected">Conectado</span>
+                </div>
               </div>
+              <AddMenu />
+            </header>
+            <div className="main-body">
+              {activeView === 'home' && <DashboardGrid />}
+              {activeView === 'energy' && <EnergyView />}
+              {activeView === 'map' && <MapView />}
+              {activeView === 'connections' && <ConnectionsView />}
+              {activeView === 'updates' && <PlaceholderView name="Actualizaciones" />}
+              {activeView === 'history' && <PlaceholderView name="Historial" />}
             </div>
-            <AddMenu />
-          </header>
-          <div className="main-body">
-            {activeView === 'home' && <DashboardGrid />}
-            {activeView === 'energy' && <EnergyView />}
-            {activeView === 'map' && <MapView />}
-            {activeView === 'connections' && <ConnectionsView />}
-            {activeView === 'updates' && <PlaceholderView name="Actualizaciones" />}
-            {activeView === 'history' && <PlaceholderView name="Historial" />}
-          </div>
-        </main>
-      </div>
-    </DeviceProvider>
+          </main>
+        </div>
+      </DeviceProvider>
+    </ThemeProvider>
   )
 }

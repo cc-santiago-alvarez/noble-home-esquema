@@ -100,8 +100,11 @@
 
 /* Card */
 .ev-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -199,8 +202,11 @@
 
 /* Gauge cards */
 .ev-gauge-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
   border-radius: 12px;
   padding: 12px;
   display: flex;
@@ -286,4 +292,9 @@
 .energy-nav-btn:hover {
   background: var(--bg-hover);
   color: var(--text-primary);
+}
+
+/* Light mode */
+[data-theme="light"] .energy-now-btn {
+  background: #0891b2;
 }

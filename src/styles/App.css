@@ -10,7 +10,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: var(--bg-primary);
+  background: transparent;
+  padding-left: 70px;
 }
 
 .main-header {

@@ -19,8 +19,11 @@
   align-items: center;
   gap: 2px;
   padding: 10px 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
   border-radius: 10px;
   min-width: 80px;
 }
@@ -102,8 +105,11 @@
 .conn-table-wrapper {
   flex: 1;
   overflow-y: auto;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
   border-radius: 12px;
 }
 
@@ -125,7 +131,7 @@
   color: var(--text-secondary);
   padding: 10px 14px;
   border-bottom: 1px solid var(--border);
-  background: var(--bg-card);
+  background: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -206,4 +212,9 @@
   padding: 32px;
   color: var(--text-secondary);
   font-size: 14px;
+}
+
+/* Light mode */
+[data-theme="light"] .conn-table th {
+  background: rgba(245, 243, 239, 0.95);
 }

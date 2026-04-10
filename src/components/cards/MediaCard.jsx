@@ -197,9 +197,9 @@ function NowPlayingPage() {
       </div>
       <div className="now-playing-art">
         <div className="now-playing-art-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(0,0,0,0.25)" stroke="none">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--icon-placeholder)" stroke="none">
             <circle cx="12" cy="12" r="10"/>
-            <circle cx="12" cy="12" r="3" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="12" cy="12" r="3" fill="var(--chart-grid-strong)"/>
           </svg>
           <span className="now-playing-album-text">{np.album}</span>
         </div>

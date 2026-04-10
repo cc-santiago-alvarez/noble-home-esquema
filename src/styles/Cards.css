@@ -47,7 +47,7 @@
   width: 40px;
   height: 22px;
   border-radius: 11px;
-  background: #d1d5db;
+  background: var(--toggle-off);
   border: none;
   position: relative;
   transition: background 0.2s ease;
@@ -57,7 +57,7 @@
 }
 
 .toggle-switch-sm.on {
-  background: #f59e0b;
+  background: var(--accent);
 }
 
 .toggle-knob-sm {
@@ -196,21 +196,20 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 8px;
+  padding: 2px;
   min-height: 0;
 }
 
 .house-floorplan-wrapper {
   position: relative;
-  display: inline-block;
-  max-width: 100%;
-  max-height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .house-floorplan-img {
   display: block;
-  max-width: 100%;
-  max-height: calc(50vh - 100px);
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -227,7 +226,7 @@
   backdrop-filter: blur(3px);
   border-radius: 3px;
   padding: 1px 5px;
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 600;
   color: #fff;
   letter-spacing: 0.2px;
@@ -237,15 +236,15 @@
 .house-device-btn {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: none;
-  color: #333;
+  color: var(--text-secondary);
   z-index: 10;
   transition: all 0.2s ease;
   padding: 0;
@@ -254,14 +253,14 @@
 
 .house-device-btn:hover {
   transform: translate(-50%, -50%) scale(1.3);
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Lights ON - yellow */
 .house-device-btn.on {
-  color: #f59e0b;
-  background: rgba(245, 158, 11, 0.15);
-  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.5));
+  color: #da9b3a;
+  background: rgba(218, 155, 58, 0.15);
+  filter: drop-shadow(0 0 4px rgba(218, 155, 58, 0.5));
 }
 
 /* Cameras active - green */
@@ -272,7 +271,7 @@
 }
 
 .house-camera:not(.active) {
-  color: #333;
+  color: var(--text-secondary);
 }
 
 /* Thermostats - temperature based */
@@ -549,7 +548,8 @@
 .now-playing-page {
   height: 100%;
   display: flex;
-  background: #e8a910;
+  background: linear-gradient(135deg, rgba(218, 155, 58, 0.25) 0%, rgba(218, 155, 58, 0.10) 100%);
+  backdrop-filter: blur(16px);
   border-radius: 0 0 15px 15px;
   overflow: hidden;
 }
@@ -569,7 +569,7 @@
   gap: 6px;
   font-size: 13px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--text-secondary);
 }
 
 .now-playing-track {
@@ -583,14 +583,14 @@
 .now-playing-title {
   font-size: 18px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
   margin: 0;
   line-height: 1.2;
 }
 
 .now-playing-artist {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -601,7 +601,7 @@
 }
 
 .np-control-btn {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,7 +612,7 @@
 }
 
 .np-control-btn:hover {
-  color: #000;
+  color: #fff;
 }
 
 .np-play-btn {
@@ -631,7 +631,7 @@
 .now-playing-art-placeholder {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -642,8 +642,285 @@
 
 .now-playing-album-text {
   font-size: 10px;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.4);
   text-align: center;
   padding: 0 8px;
   font-weight: 500;
+}
+
+/* =============================================
+   VACUUM PAGE
+   ============================================= */
+.vacuum-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.vacuum-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 16px;
+  min-height: 0;
+}
+
+.vacuum-status-ring {
+  flex-shrink: 0;
+}
+
+.vacuum-ring-svg {
+  width: 130px;
+  height: 130px;
+}
+
+.vacuum-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.vacuum-power-btn {
+  padding: 8px 24px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vacuum-power-btn.active {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: white;
+}
+
+.vacuum-power-btn:not(.active):hover {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.vacuum-modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.vacuum-mode-btn {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.vacuum-mode-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* =============================================
+   IOT DEVICES PAGE
+   ============================================= */
+.iot-devices-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.iot-devices-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 8px;
+}
+
+.iot-device-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.iot-device-row:last-child {
+  border-bottom: none;
+}
+
+.iot-device-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iot-device-icon {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.iot-device-icon.active {
+  color: var(--accent);
+}
+
+.iot-device-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.iot-device-name {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.iot-device-status {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* =============================================
+   LOCKS CARD
+   ============================================= */
+.locks-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.locks-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.locks-shield {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.locks-shield.secure {
+  color: var(--success);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.locks-shield.warning {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.locks-summary-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.locks-count {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.locks-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.locks-all-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.locks-all-btn:hover {
+  background: rgba(218, 155, 58, 0.12);
+}
+
+.locks-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 8px;
+}
+
+.lock-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lock-row:last-child {
+  border-bottom: none;
+}
+
+.lock-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lock-icon {
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.lock-icon.locked {
+  color: var(--success);
+}
+
+.lock-icon.unlocked {
+  color: var(--danger);
+}
+
+/* =============================================
+   LIGHT MODE OVERRIDES
+   ============================================= */
+[data-theme="light"] .house-device-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .np-control-btn {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .np-control-btn:hover {
+  color: #1a1a1a;
+}
+
+[data-theme="light"] .now-playing-art-placeholder {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .now-playing-album-text {
+  color: rgba(0, 0, 0, 0.4);
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDevices } from '../../context/DeviceContext'
+import { useTheme } from '../../context/ThemeContext'
 import { LightIcon, ThermostatIcon, CurtainIcon, CameraIcon } from '../DeviceIcons'
 import { LightPopup, ThermostatPopup, CurtainPopup, CameraPopup } from '../DevicePopup'
 
@@ -52,6 +53,7 @@ const DEVICE_POSITIONS = {
 
 export default function HouseCard() {
   const { devices } = useDevices()
+  const { theme } = useTheme()
   const [popup, setPopup] = useState(null)
 
   const openPopup = (type, roomId) => setPopup({ type, roomId })
@@ -62,7 +64,7 @@ export default function HouseCard() {
       <div className="card-header">House</div>
       <div className="card-body house-card-body">
         <div className="house-floorplan-wrapper">
-          <img src="/PLANTA.svg" alt="Planta del hogar" className="house-floorplan-img" draggable={false} />
+          <img src={theme === 'light' ? '/PLANTA_black.png' : '/PLANTA.png'} alt="Planta del hogar" className="house-floorplan-img" draggable={false} />
 
           {ROOMS.map(room => (
             <div
@@ -83,7 +85,7 @@ export default function HouseCard() {
                 onClick={() => openPopup('light', roomId)}
                 title={`Luz - ${devices.lights[roomId].name}`}
               >
-                <LightIcon on={devices.lights[roomId].on} size={14} />
+                <LightIcon on={devices.lights[roomId].on} size={22} />
               </button>
             )
           ))}
@@ -101,7 +103,7 @@ export default function HouseCard() {
                 onClick={() => openPopup('thermostat', roomId)}
                 title={`Termostato - ${thermo.name}`}
               >
-                <ThermostatIcon size={14} />
+                <ThermostatIcon size={22} />
               </button>
             )
           })}
@@ -118,7 +120,7 @@ export default function HouseCard() {
                 onClick={() => openPopup('curtain', roomId)}
                 title={`Cortina - ${curtain.name}`}
               >
-                <CurtainIcon position={curtain.position} size={14} />
+                <CurtainIcon position={curtain.position} size={22} />
               </button>
             )
           })}
@@ -132,7 +134,7 @@ export default function HouseCard() {
                 onClick={() => openPopup('camera', cameraId)}
                 title={`Cámara - ${devices.cameras[cameraId].name}`}
               >
-                <CameraIcon active={devices.cameras[cameraId].active} size={14} />
+                <CameraIcon active={devices.cameras[cameraId].active} size={22} />
               </button>
             )
           ))}

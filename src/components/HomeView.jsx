@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDevices } from '../context/DeviceContext'
+import { useTheme } from '../context/ThemeContext'
 import { LightIcon, ThermostatIcon, CurtainIcon, CameraIcon } from './DeviceIcons'
 import { LightPopup, ThermostatPopup, CurtainPopup, CameraPopup } from './DevicePopup'
 import '../styles/HomeView.css'
@@ -69,6 +70,7 @@ const DEVICE_POSITIONS = {
 
 export default function HomeView() {
   const { devices } = useDevices()
+  const { theme } = useTheme()
   const [popup, setPopup] = useState(null)
 
   const openPopup = (type, roomId) => setPopup({ type, roomId })
@@ -109,7 +111,7 @@ export default function HomeView() {
       <div className="floorplan-container">
         <div className="floorplan-wrapper">
           {/* Floor plan SVG */}
-          <img src="/PLANTA.svg" alt="Planta del hogar" className="floorplan-img" draggable={false} />
+          <img src={theme === 'light' ? '/PLANTA_black.png' : '/PLANTA.svg'} alt="Planta del hogar" className="floorplan-img" draggable={false} />
 
           {/* Room name cards */}
           {ROOMS.map(room => (

@@ -22,35 +22,35 @@ function EnergyDistribution({ compact }) {
       <div className="ev-card-body ev-flow-body">
         <svg viewBox={vb} className="ev-flow-svg">
           <path d="M 120 50 C 180 50, 220 100, 275 105" fill="none" stroke="#eab308" strokeWidth="1.5" opacity="0.4"/>
-          <path d="M 300 55 C 300 70, 290 88, 280 100" fill="none" stroke="#9ca3af" strokeWidth="1.5" opacity="0.4"/>
+          <path d="M 300 55 C 300 70, 290 88, 280 100" fill="none" stroke="var(--chart-grid-strong)" strokeWidth="1.5" opacity="0.4"/>
           <path d="M 80 145 C 150 145, 210 120, 270 115" fill="none" stroke="#8b5cf6" strokeWidth="1.5" opacity="0.4"/>
           <path d="M 270 130 C 240 165, 200 195, 170 215" fill="none" stroke="#22c55e" strokeWidth="1.5" opacity="0.4"/>
           <path d="M 305 130 C 315 170, 315 200, 310 220" fill="none" stroke="#06b6d4" strokeWidth="1.5" opacity="0.4"/>
           <circle cx="110" cy="42" r="26" fill="none" stroke="#eab308" strokeWidth="2"/>
           <text x="110" y="38" textAnchor="middle" fontSize="14" fill="#eab308">⚡</text>
-          <text x="110" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.solar.value} {e.solar.unit}</text>
-          <text x="110" y="80" textAnchor="middle" fontSize="9" fill="#6b7280">Solar</text>
+          <text x="110" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.solar.value} {e.solar.unit}</text>
+          <text x="110" y="80" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Solar</text>
           <circle cx="300" cy="42" r="26" fill="none" stroke="#f97316" strokeWidth="2"/>
           <text x="300" y="38" textAnchor="middle" fontSize="14" fill="#f97316">🔥</text>
-          <text x="300" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.gas.value} {e.gas.unit}</text>
-          <text x="300" y="80" textAnchor="middle" fontSize="9" fill="#6b7280">Gas</text>
+          <text x="300" y="54" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.gas.value} {e.gas.unit}</text>
+          <text x="300" y="80" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Gas</text>
           <circle cx="55" cy="145" r="26" fill="none" stroke="#8b5cf6" strokeWidth="2"/>
           <text x="55" y="138" textAnchor="middle" fontSize="11" fill="#8b5cf6">⇌</text>
-          <text x="55" y="150" textAnchor="middle" fontSize="7" fill="#6b7280">← {e.gridIn.value} kWh</text>
-          <text x="55" y="159" textAnchor="middle" fontSize="7" fill="#6b7280">→ {e.gridOut.value} kWh</text>
-          <text x="55" y="180" textAnchor="middle" fontSize="9" fill="#6b7280">Red</text>
+          <text x="55" y="150" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">← {e.gridIn.value} kWh</text>
+          <text x="55" y="159" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">→ {e.gridOut.value} kWh</text>
+          <text x="55" y="180" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Red</text>
           <circle cx="285" cy="112" r="30" fill="none" stroke="#f97316" strokeWidth="2"/>
           <text x="285" y="108" textAnchor="middle" fontSize="16" fill="#f97316">🏠</text>
-          <text x="285" y="124" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.house.value} {e.house.unit}</text>
+          <text x="285" y="124" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.house.value} {e.house.unit}</text>
           <circle cx="155" cy="225" r="26" fill="none" stroke="#22c55e" strokeWidth="2"/>
           <text x="155" y="218" textAnchor="middle" fontSize="13" fill="#22c55e">🔋</text>
-          <text x="155" y="232" textAnchor="middle" fontSize="7" fill="#6b7280">← {e.batteryIn.value} kWh</text>
-          <text x="155" y="241" textAnchor="middle" fontSize="7" fill="#6b7280">→ {e.batteryOut.value} kWh</text>
-          <text x="155" y="258" textAnchor="middle" fontSize="9" fill="#6b7280">Batería</text>
+          <text x="155" y="232" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">← {e.batteryIn.value} kWh</text>
+          <text x="155" y="241" textAnchor="middle" fontSize="7" fill="var(--text-secondary)">→ {e.batteryOut.value} kWh</text>
+          <text x="155" y="258" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Batería</text>
           <circle cx="310" cy="235" r="26" fill="none" stroke="#06b6d4" strokeWidth="2"/>
           <text x="310" y="230" textAnchor="middle" fontSize="14" fill="#06b6d4">💧</text>
-          <text x="310" y="246" textAnchor="middle" fontSize="8" fontWeight="600" fill="#1a1a2e">{e.water.value} {e.water.unit}</text>
-          <text x="310" y="258" textAnchor="middle" fontSize="9" fill="#6b7280">Agua</text>
+          <text x="310" y="246" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--text-primary)">{e.water.value} {e.water.unit}</text>
+          <text x="310" y="258" textAnchor="middle" fontSize="9" fill="var(--text-secondary)">Agua</text>
         </svg>
       </div>
     </div>
@@ -99,9 +99,9 @@ function ElectricityChart() {
       <div className="ev-card-title">Consumo de electricidad<span className="ev-badge">+{Math.round(totalKwh)} kWh</span></div>
       <div className="ev-card-body ev-chart-body">
         <svg viewBox={`0 0 ${w} ${h}`} className="ev-chart-svg">
-          {yTicks.map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="#e5e7eb" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="9" fill="#6b7280">{v}</text></g>))}
-          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="#6b7280" transform={`rotate(-90,8,${pt + ch / 2})`}>kWh</text>
-          <line x1={pl} y1={toY(0)} x2={w - pr} y2={toY(0)} stroke="#9ca3af" strokeWidth="0.8" />
+          {yTicks.map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="var(--chart-grid)" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="9" fill="var(--text-secondary)">{v}</text></g>))}
+          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="var(--text-secondary)" transform={`rotate(-90,8,${pt + ch / 2})`}>kWh</text>
+          <line x1={pl} y1={toY(0)} x2={w - pr} y2={toY(0)} stroke="var(--chart-grid-strong)" strokeWidth="0.8" />
           {data.map((d, i) => {
             const x = toX(d.hour) - barW / 2; const bw = barW / 3
             return (<g key={i}>
@@ -110,7 +110,7 @@ function ElectricityChart() {
               {d.export < 0 && <rect x={x + bw * 2} y={toY(0)} width={bw} height={toY(d.export) - toY(0)} fill="#a78bfa" rx="1" />}
             </g>)
           })}
-          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="#6b7280">{l.label}</text>)}
+          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="var(--text-secondary)">{l.label}</text>)}
         </svg>
       </div>
     </div>
@@ -136,13 +136,13 @@ function SourcesChart() {
       <div className="ev-card-title">Fuentes de energía</div>
       <div className="ev-card-body ev-chart-body">
         <svg viewBox={`0 0 ${w} ${h}`} className="ev-chart-svg">
-          {yTicks.map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="#e5e7eb" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="9" fill="#6b7280">{v}</text></g>))}
-          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="#6b7280" transform={`rotate(-90,8,${pt + ch / 2})`}>kW</text>
+          {yTicks.map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="var(--chart-grid)" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="9" fill="var(--text-secondary)">{v}</text></g>))}
+          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="var(--text-secondary)" transform={`rotate(-90,8,${pt + ch / 2})`}>kW</text>
           <path d={gridArea} fill="rgba(96,165,250,0.25)" />
           <path d={gridPath} fill="none" stroke="#60a5fa" strokeWidth="1.5" />
           <path d={solarArea} fill="rgba(251,191,36,0.3)" />
-          <path d={solarPath} fill="none" stroke="#f59e0b" strokeWidth="1.5" />
-          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="#6b7280">{l.label}</text>)}
+          <path d={solarPath} fill="none" stroke="#da9b3a" strokeWidth="1.5" />
+          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="var(--text-secondary)">{l.label}</text>)}
         </svg>
       </div>
     </div>
@@ -157,9 +157,9 @@ function EmptyBarChart({ title, unit }) {
       <div className="ev-card-title">{title}</div>
       <div className="ev-card-body ev-chart-body">
         <svg viewBox={`0 0 ${w} ${h}`} className="ev-chart-svg">
-          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="#6b7280" transform={`rotate(-90,8,${pt + ch / 2})`}>{unit}</text>
-          {X_LABELS.map(l => { const x = pl + (l.hour / 23) * cw; return (<g key={l.hour}><line x1={x} y1={pt} x2={x} y2={pt + ch} stroke="#e5e7eb" strokeWidth="0.5" /><text x={x} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="#6b7280">{l.label}</text></g>) })}
-          <line x1={pl} y1={pt + ch} x2={w - pr} y2={pt + ch} stroke="#e5e7eb" strokeWidth="0.5" />
+          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="var(--text-secondary)" transform={`rotate(-90,8,${pt + ch / 2})`}>{unit}</text>
+          {X_LABELS.map(l => { const x = pl + (l.hour / 23) * cw; return (<g key={l.hour}><line x1={x} y1={pt} x2={x} y2={pt + ch} stroke="var(--chart-grid)" strokeWidth="0.5" /><text x={x} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="var(--text-secondary)">{l.label}</text></g>) })}
+          <line x1={pl} y1={pt + ch} x2={w - pr} y2={pt + ch} stroke="var(--chart-grid)" strokeWidth="0.5" />
         </svg>
       </div>
     </div>
@@ -178,15 +178,15 @@ function GaugeCard({ value, label, unit, color, max }) {
   return (
     <div className="ev-gauge-card">
       <div className="ev-gauge-info-icon">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--chart-grid-strong)" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       </div>
       <svg viewBox="0 0 120 90" className="ev-gauge-svg">
         <g transform={`rotate(126, ${cx}, ${cy})`}>
-          <circle cx={cx} cy={cy} r={r} fill="none" stroke="#e5e7eb" strokeWidth="8" strokeDasharray={`${arcLen} ${gap}`} strokeLinecap="round" />
+          <circle cx={cx} cy={cy} r={r} fill="none" stroke="var(--chart-grid)" strokeWidth="8" strokeDasharray={`${arcLen} ${gap}`} strokeLinecap="round" />
           <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth="8" strokeDasharray={`${fill} ${circumference - fill}`} strokeLinecap="round" />
         </g>
-        <text x={cx} y={cy + 5} textAnchor="middle" fontSize="22" fontWeight="700" fill="#1a1a2e">{value}{unit === '%' ? '%' : ''}</text>
-        {unit !== '%' && <text x={cx} y={cy + 18} textAnchor="middle" fontSize="10" fill="#6b7280">{unit}</text>}
+        <text x={cx} y={cy + 5} textAnchor="middle" fontSize="22" fontWeight="700" fill="var(--text-primary)">{value}{unit === '%' ? '%' : ''}</text>
+        {unit !== '%' && <text x={cx} y={cy + 18} textAnchor="middle" fontSize="10" fill="var(--text-secondary)">{unit}</text>}
       </svg>
       <div className="ev-gauge-label">{label}</div>
     </div>
@@ -214,16 +214,16 @@ function SolarProductionChart() {
       <div className="ev-card-title">Producción solar<span className="ev-badge">7,75 kWh</span></div>
       <div className="ev-card-body ev-chart-body">
         <svg viewBox={`0 0 ${w} ${h}`} className="ev-chart-svg">
-          {yTicks.map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="#e5e7eb" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="9" fill="#6b7280">{v}</text></g>))}
-          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="#6b7280" transform={`rotate(-90,8,${pt + ch / 2})`}>kWh</text>
+          {yTicks.map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="var(--chart-grid)" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="9" fill="var(--text-secondary)">{v}</text></g>))}
+          <text x="8" y={pt + ch / 2} textAnchor="middle" fontSize="8" fill="var(--text-secondary)" transform={`rotate(-90,8,${pt + ch / 2})`}>kWh</text>
           {/* Dashed envelope */}
-          <polyline points={allLinePoints.join(' ')} fill="none" stroke="#9ca3af" strokeWidth="1" strokeDasharray="4 3" />
+          <polyline points={allLinePoints.join(' ')} fill="none" stroke="var(--chart-grid-strong)" strokeWidth="1" strokeDasharray="4 3" />
           {/* Bars */}
           {data.map((d, i) => d.solar > 0 ? (
             <rect key={i} x={toX(d.hour) - barW / 2} y={toY(d.solar)} width={barW} height={toY(0) - toY(d.solar)} fill="#fbbf24" rx="1" />
           ) : null)}
-          <line x1={pl} y1={toY(0)} x2={w - pr} y2={toY(0)} stroke="#9ca3af" strokeWidth="0.5" />
-          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="#6b7280">{l.label}</text>)}
+          <line x1={pl} y1={toY(0)} x2={w - pr} y2={toY(0)} stroke="var(--chart-grid-strong)" strokeWidth="0.5" />
+          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 16} textAnchor="middle" fontSize="9" fill="var(--text-secondary)">{l.label}</text>)}
         </svg>
       </div>
     </div>
@@ -246,7 +246,7 @@ function DeviceUsageChart() {
     { name: 'Dryer', color: '#6ee7b7' },
     { name: 'Heat pump', color: '#c4b5fd' },
     { name: 'Boiler', color: '#fca5a5' },
-    { name: 'Consumo sin seguimiento', color: '#d1d5db' },
+    { name: 'Consumo sin seguimiento', color: 'var(--chart-grid-strong)' },
   ]
 
   // Generate simple stacked data
@@ -261,7 +261,7 @@ function DeviceUsageChart() {
       <div className="ev-card-title">Uso detallado de dispositivos individuales</div>
       <div className="ev-card-body ev-chart-body">
         <svg viewBox={`0 0 ${w} ${h}`} className="ev-chart-svg">
-          {[0, 0.3, 0.6, 0.9, 1.2, 1.5].map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="#e5e7eb" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="8" fill="#6b7280">{v}</text></g>))}
+          {[0, 0.3, 0.6, 0.9, 1.2, 1.5].map(v => (<g key={v}><line x1={pl} y1={toY(v)} x2={w - pr} y2={toY(v)} stroke="var(--chart-grid)" strokeWidth="0.5" /><text x={pl - 6} y={toY(v) + 3} textAnchor="end" fontSize="8" fill="var(--text-secondary)">{v}</text></g>))}
           {stacks.map((s, si) => {
             let cumY = 0
             return (<g key={si}>{s.values.map((v, vi) => {
@@ -269,12 +269,12 @@ function DeviceUsageChart() {
               return v > 0.01 ? <rect key={vi} x={toX(s.hour) - barW / 2} y={toY(y0 + v)} width={barW} height={toY(y0) - toY(y0 + v)} fill={devices[vi].color} rx="0.5" /> : null
             })}</g>)
           })}
-          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 14} textAnchor="middle" fontSize="9" fill="#6b7280">{l.label}</text>)}
+          {X_LABELS.map(l => <text key={l.hour} x={toX(l.hour)} y={h - pb + 14} textAnchor="middle" fontSize="9" fill="var(--text-secondary)">{l.label}</text>)}
           {/* Legend */}
           {devices.map((d, i) => (
             <g key={i} transform={`translate(${pl + i * 56}, ${h - 14})`}>
               <circle cx="4" cy="0" r="3" fill={d.color} />
-              <text x="10" y="3" fontSize="6" fill="#6b7280">{d.name}</text>
+              <text x="10" y="3" fontSize="6" fill="var(--text-secondary)">{d.name}</text>
             </g>
           ))}
         </svg>
@@ -305,14 +305,14 @@ function DeviceTotalChart() {
         <svg viewBox={`0 0 ${w} ${h}`} className="ev-chart-svg">
           {[0, 0.2, 0.4, 0.6, 0.8, 1].map(v => {
             const x = pl + (v / 1) * cw
-            return (<g key={v}><line x1={x} y1={pt} x2={x} y2={pt + ch} stroke="#e5e7eb" strokeWidth="0.5" /><text x={x} y={h - pb + 14} textAnchor="middle" fontSize="8" fill="#6b7280">{v}</text></g>)
+            return (<g key={v}><line x1={x} y1={pt} x2={x} y2={pt + ch} stroke="var(--chart-grid)" strokeWidth="0.5" /><text x={x} y={h - pb + 14} textAnchor="middle" fontSize="8" fill="var(--text-secondary)">{v}</text></g>)
           })}
-          <text x={w - 10} y={h - pb + 14} textAnchor="end" fontSize="8" fill="#6b7280">kWh</text>
+          <text x={w - 10} y={h - pb + 14} textAnchor="end" fontSize="8" fill="var(--text-secondary)">kWh</text>
           {devices.map((d, i) => {
             const y = pt + i * gap + (gap - barH) / 2
             const bw = (d.value / 1) * cw
             return (<g key={i}>
-              <text x={pl - 6} y={y + barH / 2 + 3} textAnchor="end" fontSize="9" fill="#6b7280">{d.name}</text>
+              <text x={pl - 6} y={y + barH / 2 + 3} textAnchor="end" fontSize="9" fill="var(--text-secondary)">{d.name}</text>
               <rect x={pl} y={y} width={Math.max(bw, 2)} height={barH} fill={d.color} rx="2" />
             </g>)
           })}
@@ -331,9 +331,9 @@ function EnergyFlowSankey() {
         <svg viewBox="0 0 500 160" className="ev-chart-svg">
           {/* Sources */}
           <rect x="10" y="10" width="20" height="60" fill="#8b5cf6" rx="3" />
-          <text x="5" y="85" fontSize="9" fill="#6b7280">Red</text>
-          <rect x="10" y="90" width="20" height="50" fill="#f59e0b" rx="3" />
-          <text x="5" y="150" fontSize="9" fill="#6b7280">Solar</text>
+          <text x="5" y="85" fontSize="9" fill="var(--text-secondary)">Red</text>
+          <rect x="10" y="90" width="20" height="50" fill="#da9b3a" rx="3" />
+          <text x="5" y="150" fontSize="9" fill="var(--text-secondary)">Solar</text>
 
           {/* Flows */}
           <path d="M 30 20 C 120 20, 150 30, 200 35" fill="none" stroke="rgba(139,92,246,0.15)" strokeWidth="40" />
@@ -347,9 +347,9 @@ function EnergyFlowSankey() {
           <path d="M 206 30 C 260 35, 300 40, 350 45" fill="none" stroke="rgba(139,92,246,0.1)" strokeWidth="30" />
           <path d="M 206 70 C 260 68, 300 65, 350 60" fill="none" stroke="rgba(96,165,250,0.15)" strokeWidth="50" />
 
-          <text x="210" y="28" fontSize="9" fill="#6b7280">Red</text>
-          <text x="210" y="85" fontSize="9" fill="#6b7280">Home</text>
-          <text x="370" y="55" fontSize="9" fill="#6b7280">Consumo sin seguimiento</text>
+          <text x="210" y="28" fontSize="9" fill="var(--text-secondary)">Red</text>
+          <text x="210" y="85" fontSize="9" fill="var(--text-secondary)">Home</text>
+          <text x="370" y="55" fontSize="9" fill="var(--text-secondary)">Consumo sin seguimiento</text>
         </svg>
       </div>
     </div>

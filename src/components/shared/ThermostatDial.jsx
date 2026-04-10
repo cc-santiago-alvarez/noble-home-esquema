@@ -27,7 +27,7 @@ export default function ThermostatDial({ roomName, currentTemp, targetTemp, mode
           <circle
             cx={cx} cy={cy} r={radius}
             fill="none"
-            stroke="#e5e7eb"
+            stroke="var(--chart-grid)"
             strokeWidth="5"
             strokeDasharray={`${arcLength} ${gapLength}`}
             strokeLinecap="round"
@@ -55,19 +55,19 @@ export default function ThermostatDial({ roomName, currentTemp, targetTemp, mode
           )}
         </g>
         {/* Current temp (left) */}
-        <text x={cx - 12} y={cy - 2} textAnchor="middle" fontSize="16" fontWeight="700" fill="#1a1a2e">
+        <text x={cx - 12} y={cy - 2} textAnchor="middle" fontSize="16" fontWeight="700" fill="var(--text-primary)">
           {currentTemp}°
         </text>
         {/* Target temp (right) */}
-        <text x={cx + 14} y={cy - 2} textAnchor="middle" fontSize="16" fontWeight="700" fill="#1a1a2e">
+        <text x={cx + 14} y={cy - 2} textAnchor="middle" fontSize="16" fontWeight="700" fill="var(--text-primary)">
           {targetTemp}°
         </text>
         {/* Mode label */}
-        <text x={cx} y={cy + 14} textAnchor="middle" fontSize="8" fill="#6b7280">
+        <text x={cx} y={cy + 14} textAnchor="middle" fontSize="8" fill="var(--text-secondary)">
           {mode === 'inactive' ? 'Inactive' : mode}
         </text>
         {/* Target indicator */}
-        <text x={cx} y={cy + 26} textAnchor="middle" fontSize="7" fill="#9ca3af">
+        <text x={cx} y={cy + 26} textAnchor="middle" fontSize="7" fill="var(--text-secondary)">
           ± {Math.round((currentTemp + targetTemp) / 2)} °C
         </text>
       </svg>
